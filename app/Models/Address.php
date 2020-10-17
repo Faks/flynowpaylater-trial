@@ -83,7 +83,6 @@ class Address
 
     /**
      * @param $contact
-     *
      */
     final public function addContact($contact): void
     {

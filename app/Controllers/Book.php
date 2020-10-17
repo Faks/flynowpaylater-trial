@@ -50,5 +50,4 @@ class Book
     {
         return ! empty($field) ? $field . ', ' : null;
     }
-
 }
