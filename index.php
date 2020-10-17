@@ -8,25 +8,25 @@ use App\Models\Contact;
 
 require __DIR__ . '/vendor/autoload.php';
 
-# Create first contact
+// Create first contact
 $contact = new Contact();
 $contact->setName('John Doe');
 $contact->setEmail('john@doe.com');
 
-# Add first contact to list of contacts
+// Add first contact to list of contacts
 $contacts[] = $contact;
 
-# Create second contact
+// Create second contact
 $contact = new Contact;
 $contact->setName('Anna Baker')->setEmail('anna@baker.com');
 
-# Add second contact to list of contacts
+// Add second contact to list of contacts
 $contacts[] = $contact;
 
-# Open new book
+// Open new book
 $book = new Book();
 
-# Add first address with both contacts
+// Add first address with both contacts
 $book->createAddress(
     static function () use ($contacts) {
         $address = new Address();
@@ -43,18 +43,18 @@ $book->createAddress(
     }
 );
 
-# Reset contact list
+//  Reset contact list
 $contacts = [];
 
-# Create first contact
+// Create first contact
 $contact = new Contact();
 $contact->setName('Ms Dane Rovens');
 $contact->setEmail('dane@rovens.com');
 
-# Add first contact to list of contacts
+//  Add first contact to list of contacts
 $contacts[] = $contact;
 
-# Add second address with one contact
+// Add second address with one contact
 $book->createAddress(
     static function () use ($contacts) {
         $address = new Address();
@@ -70,18 +70,15 @@ $book->createAddress(
     }
 );
 
-
-# Output all of the known information
+// Output all of the known information
 dump($book->render());
-# preview of expected output below
+// preview of expected output below
 /**
-
 Book record: #1
 Address: 33 Market street, London, Greater London, EC4 MB5, GB
-Contact #1: <john@doe.com> John Doe 
+Contact #1: <john@doe.com> John Doe
 Contact #2: <anna@baker.com> Anna Baker
 Book record: #2
 Address: 22 Tower Street, SK4 1HV, GB
 Contact #1: <dane@rovens.com> Ms Dane Rovens
-
 **/
