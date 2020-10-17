@@ -1,25 +1,97 @@
 <?php
 
+/**
+ * Class Address
+ *
+ * Php version 7.1
+ *
+ * @file
+ *
+ * @category PHP
+ * @package  App\Models
+ * @author   Oskars Germovs <oskars_germovs@inbox.lv>
+ * @license  https://opensource.org/licenses/MIT MIT Licence
+ * @link     https://flynowpaylater-trial.solum-designum.eu/
+ * Date: 2020.10.16
+ * Time: ??:??
+ */
+
 declare(strict_types=1);
 
 namespace App\Models;
 
+/**
+ * Class Address
+ * GitHub: https://github.com/Faks
+ * Bitbucket: https://bitbucket.org/Faks
+ * php version 7.1
+ *
+ * @category PHP
+ * @package  App\Models
+ * @author   Oskars Germovs <oskars_germovs@inbox.lv>
+ * @license  https://opensource.org/licenses/MIT MIT Licence
+ * @link     https://flynowpaylater-trial.solum-designum.eu/
+ * Date: 2020.10.16
+ * Time: ??:??
+ */
 class Address
 {
+    /**
+     * House Number
+     *
+     * @var string value
+     */
     public $houseNumber = '';
 
+    /**
+     * Street
+     *
+     * @var string
+     */
     public $street = '';
 
+    /**
+     * City
+     *
+     * @var string
+     */
     public $city = '';
 
+    /**
+     * County
+     *
+     * @var string
+     */
     public $county = '';
 
+    /**
+     * Post Code
+     *
+     * @var string
+     */
     public $postcode = '';
 
+    /**
+     * Country
+     *
+     * @var string
+     */
     public $country = '';
 
+    /**
+     * Contacts data array
+     *
+     * @var string
+     */
     public $contacts = [];
 
+    /**
+     * Set House Number
+     *
+     * @param string $string value
+     *
+     * @return $this
+     */
     final public function setHouseNumber(string $string): Address
     {
         $this->houseNumber = $string;
@@ -27,7 +99,9 @@ class Address
     }
 
     /**
-     * @param string $string
+     * Set Street
+     *
+     * @param string $string value
      *
      * @return $this
      */
@@ -38,7 +112,9 @@ class Address
     }
 
     /**
-     * @param string $string
+     * Set City
+     *
+     * @param string $string value
      *
      * @return $this
      */
@@ -49,7 +125,9 @@ class Address
     }
 
     /**
-     * @param string $string
+     * Set County
+     *
+     * @param string $string value
      *
      * @return $this
      */
@@ -60,9 +138,11 @@ class Address
     }
 
     /**
-     * @param string $string
+     * Set Country
      *
-     * @return $this
+     * @param string $string value
+     *
+     * @return Address
      */
     final public function setCountry(string $string): Address
     {
@@ -71,9 +151,11 @@ class Address
     }
 
     /**
-     * @param string $string
+     * Set Post Code
      *
-     * @return $this
+     * @param string $string value
+     *
+     * @return Address
      */
     final public function setPostCode(string $string): Address
     {
@@ -82,7 +164,11 @@ class Address
     }
 
     /**
-     * @param $contact
+     * Store Contact in array
+     *
+     * @param mixed $contact value
+     *
+     * @return void
      */
     final public function addContact($contact): void
     {

@@ -1,5 +1,21 @@
 <?php
 
+/**
+ * Index Entry
+ *
+ * Php version 7.1
+ *
+ * @file
+ *
+ * @category PHP
+ * @package  App
+ * @author   Oskars Germovs <oskars_germovs@inbox.lv>
+ * @license  https://opensource.org/licenses/MIT MIT Licence
+ * @link     https://flynowpaylater-trial.solum-designum.eu/
+ * Date: 2020.10.16
+ * Time: ??:??
+ */
+
 declare(strict_types=1);
 
 use App\Controllers\Book;
@@ -28,7 +44,7 @@ $book = new Book();
 
 // Add first address with both contacts
 $book->createAddress(
-    static function () use ($contacts) {
+    function () use ($contacts) {
         $address = new Address();
         $address->setHouseNumber('33');
         $address->setStreet('Market street')->setCity('London');
@@ -56,10 +72,10 @@ $contacts[] = $contact;
 
 // Add second address with one contact
 $book->createAddress(
-    static function () use ($contacts) {
+    function () use ($contacts) {
         $address = new Address();
         $address->setHouseNumber('22');
-        $address->setStreet('Tower street');
+        $address->setStreet('Tower Street');
         $address->setPostCode('SK4 1HV');
         $address->setCountry('GB');
 
@@ -71,7 +87,7 @@ $book->createAddress(
 );
 
 // Output all of the known information
-dump($book->render());
+echo $book->render();
 // preview of expected output below
 /**
 Book record: #1
